@@ -1,0 +1,9 @@
+src/UI/temp
+
+.env
+.vscode
+
+*.onnx
+*.pth
+*.h5
+*.pyc
