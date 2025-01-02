@@ -136,15 +136,6 @@ class SessionManager:
         features_metadata_path = os.path.join(metadata_dir, "features_metadata.json")
         session_info_path = os.path.join(session_folder, "session_info.json")
 
-        initial_metadata = {
-            "objects": [],
-            "clusters": [],
-            "classes": [],
-            "masks": [],
-            "features": [],
-            "masked_images": []
-        }
-
         # Write metadata files
         atomic_write(objects_metadata_path, {"objects": []})
         atomic_write(clusters_metadata_path, {"clusters": []})
