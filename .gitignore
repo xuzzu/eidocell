@@ -7,3 +7,4 @@ src/UI/temp
 *.pth
 *.h5
 *.pyc
+*.DS_Store
