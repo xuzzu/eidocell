@@ -1,8 +1,11 @@
-import altair as alt
 import pandas as pd
 import os
-from UI.navigation_interface.workspace.views.analysis.chart_configurations.parameter_holders import HistogramParameters
 import plotly.express as px
+import os
+
+import pandas as pd
+import plotly.express as px
+
 
 class PlotGenerator:
     def __init__(self, data_manager):

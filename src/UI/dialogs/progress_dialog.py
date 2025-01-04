@@ -1,5 +1,4 @@
-from PySide6.QtWidgets import QProgressBar
-from qfluentwidgets import MessageBoxBase, SegmentedWidget, SubtitleLabel, ProgressBar
+from qfluentwidgets import MessageBoxBase, SubtitleLabel, ProgressBar
 
 
 class ProgressDialog(MessageBoxBase):

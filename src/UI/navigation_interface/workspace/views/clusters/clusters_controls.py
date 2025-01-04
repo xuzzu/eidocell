@@ -1,13 +1,10 @@
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QColor, QFont
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QSpacerItem, QSizePolicy, QLabel, QComboBox,
-    QGroupBox, QFrame, QGraphicsDropShadowEffect
+    QWidget, QVBoxLayout, QSpacerItem, QSizePolicy, QLabel, QGroupBox, QFrame, QGraphicsDropShadowEffect
 )
-from qfluentwidgets import Slider, PrimaryPushButton, setCustomStyleSheet, ComboBox
-
 from backend.config import CLUSTERING_N_ITER, CLUSTERING_DEFAULT_N_CLUSTERS, MODELS
-from qfluentwidgets import (SubtitleLabel, PushButton, isDarkTheme)
+from qfluentwidgets import Slider, PrimaryPushButton, ComboBox
 
 
 class ControlPanel(QWidget):

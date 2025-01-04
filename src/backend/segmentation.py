@@ -1,12 +1,12 @@
+import os
+
 import cv2
 import numpy as np
 import onnxruntime as ort
 from PySide6.QtCore import Signal, QObject
+from backend.config import SEGMENTATION_MODEL_PATH
 from scipy import ndimage
 from scipy.spatial import ConvexHull
-from skimage.measure import regionprops
-
-from backend.config import SEGMENTATION_MODEL_PATH
 
 
 class SegmentationModel(QObject):

@@ -11,16 +11,13 @@ from PySide6.QtWidgets import (
     QAbstractItemView,
     QFrame,
     QLabel,
-    QSizePolicy,
-    QSpacerItem,
-    QGraphicsDropShadowEffect
+    QSizePolicy
 )
+from UI.navigation_interface.workspace.views.classes.class_card import ClassCard
+from UI.utils.flow_gallery import FlowGallery
 from qfluentwidgets import PrimaryPushButton, FlyoutView, Flyout, TreeWidget
 from qfluentwidgets.components.material import AcrylicLineEdit
 from qfluentwidgets.components.widgets.flyout import FlyoutAnimationType
-
-from UI.navigation_interface.workspace.views.classes.class_card import ClassCard
-from UI.utils.flow_gallery import FlowGallery
 
 
 class ClassesViewWidget(QWidget):

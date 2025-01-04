@@ -1,6 +1,4 @@
 # test_data_manager.py
-import os
-import shutil
 import unittest
 
 from data_manager import DataManager
@@ -157,7 +155,6 @@ class TestDataManager(unittest.TestCase):
 
 # test_processor.py
 import unittest
-import os
 import numpy as np
 from app.processor import Processor
 
@@ -215,7 +212,6 @@ class TestProcessor(unittest.TestCase):
 # test_session_manager.py
 import unittest
 import os
-import shutil
 from app.session_manager import SessionManager, Session
 
 class TestSessionManager(unittest.TestCase):
@@ -273,8 +269,7 @@ class TestSessionManager(unittest.TestCase):
 
 # test_image_class.py
 import unittest
-from app.objects.image_class import ImageClass
-from app.objects.image import Image
+
 
 class TestImageClass(unittest.TestCase):
 
@@ -295,7 +290,7 @@ class TestImageClass(unittest.TestCase):
 # test_cluster.py
 import unittest
 from app.objects.cluster import Cluster
-from app.objects.image import Image
+
 
 class TestCluster(unittest.TestCase):
 

@@ -1,10 +1,12 @@
 # backend/session_manager.py
 
-import uuid
 import os
 import shutil
+import uuid
 from datetime import datetime
+from pathlib import Path
 
+from backend.config import PROJECT_ROOT, SESSIONS_INDEX_FILE
 from backend.objects.session import Session
 from backend.utils.file_utils import atomic_write, read_json
 
@@ -15,17 +17,21 @@ class SessionManager:
     Operates independently from the UI.
     """
 
-    def __init__(self, sessions_dir="sessions"):
+    def __init__(self, sessions_dir=None):
         """
         Initializes the SessionManager.
 
         Args:
             sessions_dir (str, optional): Directory where session folders are stored. Defaults to "sessions".
         """
-        self.sessions_dir = sessions_dir
+        if sessions_dir is None:
+            self.sessions_dir = PROJECT_ROOT.parent / "sessions"  # One level above project root
+        else:
+            self.sessions_dir = Path(sessions_dir)
+
         os.makedirs(self.sessions_dir, exist_ok=True)
 
-        self.index_file = os.path.join(os.getcwd(), "sessions_index.json")
+        self.index_file = SESSIONS_INDEX_FILE
         self.sessions = {}  # {session_id: Session}
         self._load_sessions_index()
 

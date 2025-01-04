@@ -1,5 +1,3 @@
-import os
-
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QLabel, QFileDialog
 from qfluentwidgets import FluentIcon as FIF

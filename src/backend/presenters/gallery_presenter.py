@@ -2,14 +2,13 @@ import logging
 
 from PySide6.QtCore import Qt, QObject
 from PySide6.QtCore import Signal, Slot
-from qfluentwidgets import InfoBarPosition
-
 from UI.dialogs.custom_info_bar import CustomInfoBar
 from UI.navigation_interface.workspace.views.gallery.image_card import ImageCard
 from backend.data_manager import DataManager
 from backend.helpers.context_menu_handler import ContextMenuHandler
 from backend.helpers.ctrl_helper import ControlHelper
 from backend.helpers.sort_cards_thread import SortCardsThread
+from qfluentwidgets import InfoBarPosition
 
 
 class GalleryPresenter(QObject):

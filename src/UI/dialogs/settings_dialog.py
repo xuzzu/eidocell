@@ -1,8 +1,8 @@
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QHBoxLayout
-from qfluentwidgets import MessageBoxBase, SegmentedWidget, SubtitleLabel, Slider
+from PySide6.QtWidgets import QLabel, QHBoxLayout
+from backend.config import MODELS, load_settings, save_settings
 from qfluentwidgets import ComboBox
-from backend.config import MODELS, DEFAULT_SETTINGS, load_settings, save_settings
+from qfluentwidgets import MessageBoxBase, SegmentedWidget, SubtitleLabel, Slider
 
 
 class SettingsDialog(MessageBoxBase):

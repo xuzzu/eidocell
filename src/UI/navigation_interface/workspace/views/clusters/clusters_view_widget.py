@@ -2,7 +2,6 @@
 import logging
 
 from PySide6.QtWidgets import QWidget, QHBoxLayout
-
 from UI.navigation_interface.workspace.views.clusters.clusters_card import ClustersCard
 from UI.navigation_interface.workspace.views.clusters.clusters_controls import ControlPanel
 from UI.utils.flow_gallery import FlowGallery

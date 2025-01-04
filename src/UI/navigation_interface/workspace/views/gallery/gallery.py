@@ -1,15 +1,11 @@
 # frontend/views/gallery_container.py
+# frontend/views/gallery.py
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QColor
+from PySide6.QtGui import QPalette, QColor
+from PySide6.QtWidgets import QListView
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QFrame, QGraphicsDropShadowEffect, QSizePolicy
 )
-
-# frontend/views/gallery.py
-from PySide6.QtCore import QPoint, Qt
-from PySide6.QtWidgets import QListView
-from PySide6.QtGui import QPalette, QColor
-
 from UI.navigation_interface.workspace.views.gallery.gallery_delegate import GalleryDelegate
 from backend.presenters.gallery_model import GalleryModel
 

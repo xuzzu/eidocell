@@ -1,6 +1,7 @@
 # backend/objects/sample_class.py
 
 import random
+
 from PySide6.QtGui import QColor
 from backend.objects.sample import Sample
 

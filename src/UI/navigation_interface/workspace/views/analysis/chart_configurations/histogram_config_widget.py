@@ -1,16 +1,14 @@
 # UI/navigation_interface/workspace/views/analysis/chart_configurations/histogram_config_widget.py
 
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
     QWidget,
     QVBoxLayout,
     QHBoxLayout,
-    QGridLayout,
     QComboBox,
     QLabel,
-    QSlider, QGroupBox, QSpinBox, QCheckBox, QRadioButton, QButtonGroup
+    QGroupBox, QSpinBox, QCheckBox, QRadioButton, QButtonGroup
 )
-from PySide6.QtCore import Qt, Signal
-
 from UI.navigation_interface.workspace.views.analysis.chart_configurations.parameter_holders import HistogramParameters
 
 

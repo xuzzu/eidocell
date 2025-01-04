@@ -1,19 +1,18 @@
 ### backend/presenters/classes_presenter.py
 import logging
-import numpy as np
-
 import os
+
+import numpy as np
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QMessageBox, QTreeWidgetItem
-from qfluentwidgets import FlyoutView, PrimaryPushButton, Flyout, FlyoutAnimationType
-from qfluentwidgets.components.material import AcrylicLineEdit
-
 from UI.dialogs.class_cluster_summary import ClassClusterSummary
 from UI.dialogs.class_cluster_view import ClassClusterViewer
-from backend.config import COLLAGE_RES_SCALE, IMAGES_PER_PREVIEW
+from backend.config import COLLAGE_RES_SCALE
 from backend.data_manager import DataManager
 from backend.objects.sample_class import SampleClass
 from backend.utils.image_utils import merge_images_collage
+from qfluentwidgets import FlyoutView, PrimaryPushButton, Flyout, FlyoutAnimationType
+from qfluentwidgets.components.material import AcrylicLineEdit
 
 
 class ClassesPresenter:

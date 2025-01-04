@@ -1,22 +1,16 @@
 ### backend/presenters/clusters_presenter.py
 import random
 
-import logging
-import numpy as np
-
-import os
-from PySide6.QtCore import QEvent, Qt, Signal, QObject, Slot, QTimer
-from qfluentwidgets import InfoBarPosition, InfoBar, InfoBarIcon
+from PySide6.QtCore import QEvent, Signal, QObject, Slot, QTimer
+from qfluentwidgets import InfoBarIcon
 
 from UI.dialogs.progress_infobar import ProgressInfoBar
-from UI.navigation_interface.workspace.views.clusters.clusters_controls import ControlPanel
 from UI.navigation_interface.workspace.views.segmentation.segmentation_view_widget import SegmentationViewWidget
-from backend.config import COLLAGE_RES_SCALE, IMAGES_PER_PREVIEW
 from backend.data_manager import DataManager
 from backend.helpers.context_menu_handler import ContextMenuHandler
 from backend.helpers.segmentation_thread import SegmentationThread
 from backend.segmentation import SegmentationModel
-from PySide6.QtWidgets import QApplication
+
 
 class SegmentationPresenter(QObject):
     """Presenter for managing clusters and their display in the ClustersViewWidget."""

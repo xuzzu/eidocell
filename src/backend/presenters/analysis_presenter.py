@@ -1,13 +1,11 @@
 ### backend/presenters/analysis_presenter.py
 from PySide6.QtCore import Slot, QTimer, Signal, QObject
-from qfluentwidgets import InfoBarIcon
-
-from UI.dialogs.progress_dialog import ProgressDialog
 from UI.dialogs.progress_infobar import ProgressInfoBar
 from UI.navigation_interface.workspace.views.analysis.analysis_view_widget import AnalysisViewWidget
 from backend.data_manager import DataManager
 from backend.helpers.segmentation_thread import SegmentationThread
 from backend.segmentation import SegmentationModel
+from qfluentwidgets import InfoBarIcon
 
 
 class AnalysisPresenter(QObject):

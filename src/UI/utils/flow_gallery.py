@@ -1,10 +1,10 @@
 # flow_widget.py
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QColor
 from PySide6.QtWidgets import (
-    QScrollArea, QWidget, QFrame, QGraphicsDropShadowEffect, QVBoxLayout, QSizePolicy
+    QScrollArea, QWidget, QFrame, QGraphicsDropShadowEffect, QVBoxLayout
 )
 from qfluentwidgets import FlowLayout
-from PySide6.QtGui import QColor
 
 
 class FlowGallery(QFrame):

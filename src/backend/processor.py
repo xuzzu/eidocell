@@ -1,10 +1,10 @@
+import os
+
 import cv2
 import faiss
 import numpy as np
 import onnxruntime as ort
-import os
 from PIL import Image
-from PySide6.QtCore import Signal, QObject
 from kneed import KneeLocator
 from sklearn.decomposition import PCA
 from tqdm import tqdm

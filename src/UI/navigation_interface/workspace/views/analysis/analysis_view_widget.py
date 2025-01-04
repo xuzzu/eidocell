@@ -1,15 +1,15 @@
 import os
+
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout
-from numpy.distutils.fcompiler import pg
-from qfluentwidgets import PrimaryPushButton
-
 from UI.dialogs.custom_info_bar import CustomInfoBar, InfoBarPosition
 from UI.dialogs.plot_view_widget import PlotViewerWidget
 from UI.navigation_interface.workspace.views.analysis.analysis_card import AnalysisCard
 from UI.navigation_interface.workspace.views.analysis.chart_creation_dialog import ChartCreationDialog
 from UI.utils.flow_gallery import FlowGallery
 from backend.plot_generator import PlotGenerator
+from qfluentwidgets import PrimaryPushButton
+
 
 class AnalysisViewWidget(QWidget):
     """Widget for the analysis view, displaying charts and segmentation results."""

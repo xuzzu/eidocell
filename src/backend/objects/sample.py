@@ -1,7 +1,5 @@
 # backend/objects/sample.py
 
-import json
-
 
 class Sample:
     def __init__(self, id, path, features_file="", features=None, class_id=None, cluster_ids=None, mask_id=None):

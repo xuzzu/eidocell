@@ -1,11 +1,7 @@
+import math
 from concurrent.futures import ThreadPoolExecutor
 
-import csv
-import cv2
-import math
-import numpy as np
 from PIL import Image
-
 from backend.config import SAMPLE_RES_SCALE
 
 

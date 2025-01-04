@@ -1,8 +1,9 @@
 import random
+from pathlib import Path
+
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QColor, QPainterPath, QPainter, QPen, QContextMenuEvent, QMouseEvent
 from PySide6.QtWidgets import QVBoxLayout, QMenu
-from pathlib import Path
 from qfluentwidgets import ImageLabel, CaptionLabel, CardWidget, isDarkTheme
 
 

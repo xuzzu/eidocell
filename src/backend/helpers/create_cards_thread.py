@@ -1,7 +1,7 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from PySide6.QtCore import QThread, Signal, Qt
 from PySide6.QtGui import QImageReader
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from backend.config import SAMPLE_RES_SCALE
 
 
 class CreateCardsThread(QThread):

@@ -1,8 +1,8 @@
 ### test_progress_infobar.py
 import sys
-from PySide6.QtCore import Qt, QTimer
-from PySide6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton)
 
+from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton)
 from UI.dialogs.progress_infobar import ProgressInfoBar, InfoBarIcon, InfoBarPosition
 
 

@@ -1,10 +1,12 @@
-from PySide6.QtCore import Qt, Signal, QUrl
+from pathlib import Path
+
+from PySide6.QtCore import Signal, QUrl
 from PySide6.QtGui import QColor, QPainterPath, QPainter, QPen
 from PySide6.QtWidgets import QVBoxLayout, QSizePolicy
-from pathlib import Path
-from qfluentwidgets import CaptionLabel, CardWidget, isDarkTheme
+from backend.config import ANALYSIS_CARD_WIDTH, ANALYSIS_CARD_HEIGHT
+from qfluentwidgets import CardWidget, isDarkTheme
 from qframelesswindow.webengine import FramelessWebEngineView
-from backend.config import ANALYSIS_CARD_WIDTH, ANALYSIS_CARD_HEIGHT, ANALYSIS_CARD_IMAGE_HEIGHT
+
 
 class AnalysisCard(CardWidget):
     """ Card for displaying analysis plots. """

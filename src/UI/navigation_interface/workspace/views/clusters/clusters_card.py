@@ -1,12 +1,11 @@
 import logging
-
-from PySide6.QtCore import Qt, Signal, QMimeData, QByteArray
-from PySide6.QtGui import QColor, QPainter, QPainterPath, QPen, QMouseEvent, QDrag
-from PySide6.QtWidgets import QApplication, QVBoxLayout, QLabel, QMenu
 from pathlib import Path
-from qfluentwidgets import ImageLabel, BodyLabel, isDarkTheme, CardWidget
 
+from PySide6.QtCore import Qt, Signal, QMimeData
+from PySide6.QtGui import QColor, QPainter, QPainterPath, QPen, QMouseEvent, QDrag
+from PySide6.QtWidgets import QApplication, QVBoxLayout
 from backend.config import CLUSTERS_CARD_IMAGE_HEIGHT, CLUSTERS_CARD_WIDTH, CLUSTERS_CARD_HEIGHT
+from qfluentwidgets import ImageLabel, BodyLabel, isDarkTheme, CardWidget
 
 
 class ClustersCard(CardWidget):

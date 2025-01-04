@@ -1,9 +1,10 @@
 # backend/objects/sample.py
-from PySide6.QtCore import Qt
+import os
 from dataclasses import dataclass, field
 from typing import Optional
+
 from PySide6.QtGui import QPixmap
-import os
+
 
 @dataclass
 class ImageCard:

@@ -1,7 +1,5 @@
 # backend/objects/cluster.py
 
-import json
-
 
 class Cluster:
     def __init__(self, id, color="#FFFFFF"):

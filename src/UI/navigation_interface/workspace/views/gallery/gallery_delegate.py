@@ -1,8 +1,8 @@
 # backend/delegates/gallery_delegate.py
 
-from PySide6.QtWidgets import QStyledItemDelegate, QStyle
+from PySide6.QtCore import QRect, QSize, Qt
 from PySide6.QtGui import QPainter, QColor, QPixmap, QPen, QBrush, QPainterPath
-from PySide6.QtCore import QRect, QSize, Qt, QPoint
+from PySide6.QtWidgets import QStyledItemDelegate, QStyle
 
 
 class GalleryDelegate(QStyledItemDelegate):

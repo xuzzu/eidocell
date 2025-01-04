@@ -1,18 +1,18 @@
 # coding:utf-8
-from enum import Enum
-from qfluentwidgets import FluentIconBase, Theme, isDarkTheme, drawIcon, TransparentToolButton, themeColor, \
-    FluentStyleSheet, TextWrap, ProgressBar
-from qfluentwidgets.components.widgets.info_bar import TopInfoBarManager, BottomRightInfoBarManager, \
-    TopRightInfoBarManager
-from typing import Union
 import weakref
+from enum import Enum
+from typing import Union
 
 from PySide6.QtCore import (Qt, QEvent, QSize, QRectF, QObject, QPropertyAnimation,
                             QEasingCurve, QTimer, Signal, QParallelAnimationGroup, QPoint)
 from PySide6.QtGui import QPainter, QIcon, QColor
 from PySide6.QtWidgets import (QWidget, QFrame, QLabel, QHBoxLayout, QVBoxLayout,
-                               QToolButton, QGraphicsOpacityEffect)
+                               QGraphicsOpacityEffect)
 from qfluentwidgets import FluentIcon as FIF
+from qfluentwidgets import FluentIconBase, Theme, isDarkTheme, drawIcon, TransparentToolButton, themeColor, \
+    FluentStyleSheet, TextWrap, ProgressBar
+from qfluentwidgets.components.widgets.info_bar import TopInfoBarManager, BottomRightInfoBarManager, \
+    TopRightInfoBarManager
 
 
 class InfoBarIcon(FluentIconBase, Enum):

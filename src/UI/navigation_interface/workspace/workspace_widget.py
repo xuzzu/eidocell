@@ -1,12 +1,11 @@
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QStackedWidget
-from qfluentwidgets import Pivot
-
 from UI.navigation_interface.workspace.views.analysis.analysis_view_widget import AnalysisViewWidget
 from UI.navigation_interface.workspace.views.classes.classes_view_widget import ClassesViewWidget
 from UI.navigation_interface.workspace.views.clusters.clusters_view_widget import ClustersViewWidget
 from UI.navigation_interface.workspace.views.gallery.gallery_view_widget import GalleryViewWidget
 from UI.navigation_interface.workspace.views.segmentation.segmentation_view_widget import SegmentationViewWidget
+from qfluentwidgets import Pivot
 
 
 class WorkspaceWidget(QWidget):

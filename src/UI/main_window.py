@@ -1,23 +1,18 @@
 # coding:utf-8
 import logging
-
-import csv
-import cv2
-import os
-import shutil
 import sys
+
 from PySide6.QtCore import Qt, Signal, QEasingCurve
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QApplication, QFrame, QWidget
-from datetime import datetime
-from qfluentwidgets import FluentIcon as FIF, Flyout, InfoBarIcon, InfoBarPosition, InfoBar
-from qfluentwidgets import (NavigationBar, NavigationItemPosition, isDarkTheme, PopUpAniStackedWidget)
-from qframelesswindow import FramelessWindow, TitleBar
-
 from UI.dialogs.export_dialog import ExportDialog
 from UI.dialogs.settings_dialog import SettingsDialog
 from backend.backend_initializer import BackendInitializer
 from backend.config import DARK_THEME_QSS_PATH, LIGHT_THEME_QSS_PATH, WINDOW_WIDTH, WINDOW_HEIGHT, APP_ICON_PATH
+from qfluentwidgets import FluentIcon as FIF, Flyout, InfoBarIcon, InfoBarPosition, InfoBar
+from qfluentwidgets import (NavigationBar, NavigationItemPosition, isDarkTheme, PopUpAniStackedWidget)
+from qframelesswindow import FramelessWindow, TitleBar
+
 from navigation_interface.sessions.sessions_widget import FolderListDialog
 from navigation_interface.workspace.workspace_widget import WorkspaceWidget
 
@@ -189,7 +184,7 @@ class Window(FramelessWindow):
 
     def initWindow(self):
         self.resize(WINDOW_WIDTH, WINDOW_HEIGHT)
-        self.setWindowIcon(QIcon(APP_ICON_PATH))
+        self.setWindowIcon(QIcon(str(APP_ICON_PATH)))
         self.setWindowTitle('BioSort')
         self.titleBar.setAttribute(Qt.WA_StyledBackground)
 

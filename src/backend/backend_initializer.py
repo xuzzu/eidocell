@@ -1,11 +1,11 @@
 # backend/backend_initializer.py
 
-from typing import Optional, Any
 import logging
+from typing import Optional, Any
 
 from PySide6.QtWidgets import QWidget
-
-from backend.config import load_settings, save_settings
+from backend.config import load_settings
+from backend.data_manager import DataManager  # Ensure DataManager is correctly imported
 from backend.presenters.analysis_presenter import AnalysisPresenter
 from backend.presenters.classes_presenter import ClassesPresenter
 from backend.presenters.clusters_presenter import ClustersPresenter
@@ -15,8 +15,6 @@ from backend.presenters.sessions_presenter import SessionPresenter
 from backend.processor import Processor
 from backend.segmentation import SegmentationModel
 from backend.session_manager import SessionManager
-from backend.data_manager import DataManager  # Ensure DataManager is correctly imported
-
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

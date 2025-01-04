@@ -1,8 +1,6 @@
 # backend/objects/session.py
 
 import os
-import json
-from datetime import datetime
 
 
 class Session:

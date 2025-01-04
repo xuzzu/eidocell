@@ -1,6 +1,4 @@
 import pickle
-import uuid
-from datetime import datetime
 
 
 class SaveFile:

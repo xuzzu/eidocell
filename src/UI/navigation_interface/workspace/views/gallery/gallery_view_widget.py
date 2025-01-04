@@ -1,8 +1,7 @@
-from PySide6.QtCore import Slot, QTimer, QEvent, QSize
+from PySide6.QtCore import Slot, QTimer, QSize
 from PySide6.QtWidgets import QWidget, QVBoxLayout
-
+from UI.navigation_interface.workspace.views.gallery.gallery import GalleryContainer
 from UI.navigation_interface.workspace.views.gallery.gallery_controls import GalleryControls
-from UI.navigation_interface.workspace.views.gallery.gallery import GalleryView, GalleryContainer
 
 
 class GalleryViewWidget(QWidget):

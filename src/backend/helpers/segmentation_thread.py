@@ -1,10 +1,8 @@
 ### backend/helpers/segmentation_thread.py
-import cv2
 import os
 
+import cv2
 from PySide6.QtCore import QThread, Signal
-from pyqtgraph import image
-
 from backend.utils.image_utils import combine_image_and_mask
 
 

@@ -1,8 +1,8 @@
+from PySide6.QtCore import Signal
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QComboBox, QLabel,
-    QGroupBox, QSpinBox, QCheckBox, QRadioButton, QButtonGroup
+    QGroupBox, QRadioButton, QButtonGroup
 )
-from PySide6.QtCore import Qt, Signal
 from UI.navigation_interface.workspace.views.analysis.chart_configurations.parameter_holders import ScatterParameters
 
 

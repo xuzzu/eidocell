@@ -1,22 +1,18 @@
 ### UI/class_cluster_viewer.py
-from PySide6.QtCore import Qt, QTimer, Slot, QSize
-from PySide6.QtGui import QColor, QImageReader
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QScrollArea
-from qfluentwidgets import FlowLayout, CaptionLabel
+from PySide6.QtCore import QSize
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QAction
+from PySide6.QtWidgets import QListView
 from PySide6.QtWidgets import QMenu
-
-# from UI.navigation_interface.workspace.views.gallery.gallery import GalleryView
-from UI.navigation_interface.workspace.views.gallery.gallery_delegate import GalleryDelegate
-from UI.navigation_interface.workspace.views.gallery.image_card import ImageCard
 # import qspaceritem, qsizepolicy, qscrollarea, qslider, qhboxlayout, qvboxlayout, qwidget, qlabel
 from PySide6.QtWidgets import QSpacerItem, QSizePolicy, QHBoxLayout
-from qfluentwidgets import Slider
-from PySide6.QtCore import QPoint, Qt
-from PySide6.QtWidgets import QListView
-
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QScrollArea
 from UI.navigation_interface.workspace.views.gallery.gallery_delegate import GalleryDelegate
+# from UI.navigation_interface.workspace.views.gallery.gallery import GalleryView
+from UI.navigation_interface.workspace.views.gallery.image_card import ImageCard
 from backend.presenters.gallery_model import GalleryModel
+from qfluentwidgets import Slider
+
 
 # Doing like that for now because did not figure out the context menu handling for the class-cluster viewer yet.
 class GalleryView(QListView):

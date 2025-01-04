@@ -1,15 +1,14 @@
 # frontend/views/segmentation_controls.py
 
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QColor
 from PySide6.QtWidgets import (
     QFrame,
     QVBoxLayout,
-    QHBoxLayout,
     QLabel,
     QSizePolicy,
     QGraphicsDropShadowEffect
 )
-from PySide6.QtGui import QColor
 from qfluentwidgets import ComboBox, Slider, PushButton
 
 

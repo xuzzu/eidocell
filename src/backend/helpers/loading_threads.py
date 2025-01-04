@@ -1,12 +1,13 @@
 # backend/workers.py
-from PySide6.QtCore import QObject, Signal, QRunnable, Slot
-from PySide6.QtGui import QPixmap
-import numpy as np
-import cv2
 import os
-from backend.utils.file_utils import read_json, atomic_write
-from backend.objects.sample import Sample
+
+import cv2
+import numpy as np
+from PySide6.QtCore import QObject, Signal, QRunnable, Slot
 from backend.objects.mask import Mask
+from backend.objects.sample import Sample
+from backend.utils.file_utils import read_json
+
 
 class WorkerSignals(QObject):
     progress = Signal(int)           # Emitting progress percentage

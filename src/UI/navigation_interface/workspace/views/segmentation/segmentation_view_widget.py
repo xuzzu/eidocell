@@ -1,8 +1,8 @@
 
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel
-from UI.navigation_interface.workspace.views.segmentation.segmentation_controls import SegmentationControls
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
 from UI.navigation_interface.workspace.views.segmentation.preview_grid import PreviewGrid
+from UI.navigation_interface.workspace.views.segmentation.segmentation_controls import SegmentationControls
 
 
 class SegmentationViewWidget(QWidget):

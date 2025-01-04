@@ -1,16 +1,17 @@
 import cv2
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QColor
+from PySide6.QtGui import QImage, QPixmap
+from PySide6.QtWidgets import (
+    QGraphicsDropShadowEffect
+)
 from PySide6.QtWidgets import (
     QGridLayout,
     QLabel,
     QFrame,
     QSizePolicy
 )
-from PySide6.QtGui import QImage, QPixmap
-from PySide6.QtWidgets import (
-    QGraphicsDropShadowEffect
-)
-from PySide6.QtGui import QColor
+
 
 class PreviewGrid(QFrame):
     """A widget displaying the preview grid of segmented images with enhanced design."""

@@ -1,15 +1,13 @@
 # UI/navigation_interface/workspace/views/analysis/chart_configurations/chart_creation_dialog.py
-from typing import Optional
 
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QStackedWidget
-from qfluentwidgets import MessageBoxBase, SegmentedWidget, SubtitleLabel
-
+from PySide6.QtWidgets import QWidget, QStackedWidget
 from UI.navigation_interface.workspace.views.analysis.chart_configurations.histogram_config_widget import \
     HistogramConfigWidget
 from UI.navigation_interface.workspace.views.analysis.chart_configurations.scatter_config_widget import \
     ScatterConfigWidget
-from backend.plot_generator import PlotGenerator
 from backend.data_manager import DataManager
+from backend.plot_generator import PlotGenerator
+from qfluentwidgets import MessageBoxBase, SegmentedWidget, SubtitleLabel
 
 
 class ChartCreationDialog(MessageBoxBase):

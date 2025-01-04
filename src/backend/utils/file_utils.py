@@ -2,8 +2,8 @@
 
 import json
 import os
-import tempfile
 import shutil
+import tempfile
 
 
 def atomic_write(file_path, data, mode='w'):

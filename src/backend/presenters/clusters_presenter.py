@@ -1,23 +1,21 @@
 ### backend/presenters/clusters_presenter.py
 import logging
-import numpy as np
-
 import os
-from PySide6.QtCore import QEvent, Qt, Signal, QObject, Slot, QTimer
-from qfluentwidgets import InfoBarPosition, InfoBar, InfoBarIcon
 
+import numpy as np
+from PySide6.QtCore import Qt, Signal, QObject, Slot, QTimer
 from UI.dialogs.class_cluster_summary import ClassClusterSummary
 from UI.dialogs.class_cluster_view import ClassClusterViewer
 from UI.dialogs.custom_info_bar import CustomInfoBar
-from UI.dialogs.progress_dialog import ProgressDialog
 from UI.dialogs.progress_infobar import ProgressInfoBar
 from UI.navigation_interface.workspace.views.clusters.clusters_controls import ControlPanel
-from backend.config import COLLAGE_RES_SCALE, IMAGES_PER_PREVIEW
+from backend.config import COLLAGE_RES_SCALE
 from backend.data_manager import DataManager
 from backend.helpers.context_menu_handler import ContextMenuHandler
 from backend.helpers.ctrl_helper import ControlHelper
 from backend.helpers.feature_extraction_thread import FeatureExtractionThread
 from backend.utils.image_utils import merge_images_collage
+from qfluentwidgets import InfoBarPosition, InfoBarIcon
 
 
 class ClustersPresenter(QObject):

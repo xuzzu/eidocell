@@ -1,7 +1,5 @@
 # backend/objects/mask.py
 
-import json
-
 
 class Mask:
     def __init__(self, id, image_id, path, attributes=None, masked_image_path=None, masked_image=None):

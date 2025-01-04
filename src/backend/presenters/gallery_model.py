@@ -1,10 +1,10 @@
 # backend/models/gallery_model.py
 
+from collections import OrderedDict
+
+from PySide6.QtCore import QThreadPool, QRunnable
 from PySide6.QtCore import Qt, QAbstractListModel, QModelIndex
 from PySide6.QtGui import QPixmap
-from backend.objects.sample import Sample  # Adjust import path as necessary
-from collections import OrderedDict
-from PySide6.QtCore import QThreadPool, QRunnable
 
 
 class LoadPixmapTask(QRunnable):

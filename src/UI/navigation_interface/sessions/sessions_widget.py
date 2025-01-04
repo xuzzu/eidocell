@@ -1,4 +1,5 @@
 import os
+
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import (
     QBrush,
@@ -16,6 +17,7 @@ from PySide6.QtWidgets import (
     QPushButton,
 )
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
+from UI.navigation_interface.sessions.create_session_dialog import CreateSessionDialog
 from qfluentwidgets import (
     SingleDirectionScrollArea,
     FluentStyleSheet,
@@ -23,8 +25,6 @@ from qfluentwidgets import (
     getIconColor,
 )
 from qfluentwidgets.components.dialog_box.mask_dialog_base import MaskDialogBase
-
-from UI.navigation_interface.sessions.create_session_dialog import CreateSessionDialog
 
 
 class ClickableWindow(QWidget):

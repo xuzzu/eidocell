@@ -2,7 +2,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHeaderView
 )
-from qfluentwidgets import CaptionLabel
+
 
 class ClassClusterSummary(QWidget):
     """Widget for displaying a summary of a class or cluster."""
