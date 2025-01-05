@@ -8,3 +8,4 @@ src/UI/temp
 *.h5
 *.pyc
 *.DS_Store
+*.txt
