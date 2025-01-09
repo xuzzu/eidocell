@@ -52,15 +52,7 @@ class ClustersPresenter(QObject):
             cluster_ids (list): List of cluster IDs to load. If None, all clusters are loaded.
         """
         if cluster_ids is None:
-            for cluster_id, cluster in self.data_manager.clusters.items():
-                preview_image_path = self._generate_cluster_preview(cluster_id)
-                card = self.clusters_view_widget.create_cluster_card(cluster_id, preview_image_path)
-                card.cluster_color = cluster.color
-                card.card_clicked.connect(self.on_card_clicked)
-                card.split_requested.connect(self.split_selected_cluster)
-                card.merge_requested.connect(self.merge_selected_clusters)
-                card.assign_class_requested.connect(self.assign_clusters_to_class)
-                card.cluster_double_clicked.connect(self.show_cluster_viewer)
+            cluster_ids = list(self.data_manager.clusters.keys())
         else:
             for cluster_id in cluster_ids:
                 cluster = self.data_manager.get_cluster(cluster_id)
@@ -89,8 +81,9 @@ class ClustersPresenter(QObject):
             true_label = filename.split('_')[0]  # Extract label before the first underscore
             true_labels.append(true_label)
 
-        # Extract features if not already done
-        if any(len(sample.features) == 0 for sample in self.data_manager.samples.values()):
+        # Feature check
+        needs_extraction = any(not sample.features for sample in self.data_manager.samples.values())
+        if needs_extraction:
             self.progress_info_bar = ProgressInfoBar.new(
                 icon=InfoBarIcon.INFORMATION,
                 title="Extracting Features",
@@ -215,31 +208,24 @@ class ClustersPresenter(QObject):
 
     def merge_selected_clusters(self, selected_card_ids):
         """Merges the selected clusters."""
-        print(f"Merging clusters: {selected_card_ids}")
-
-        # Check if there are at least two clusters to merge
-        if len(selected_card_ids) < 2:
+        selected_count = len(selected_card_ids)
+        if selected_count < 2:
             print("Error: Need at least two clusters to merge.")
             return
 
-        # Merge clusters in the DataManager
+        # Convert to list once
         cluster_ids = list(selected_card_ids)
         new_cluster = self.data_manager.merge_clusters(cluster_ids)
-
-        # Update the UI by removing old cards and creating a new one for the merged cluster
-        print(cluster_ids)
-        self.clusters_view_widget.clear_cluster_cards(cluster_ids)  # Clear existing cards
-        self.load_clusters([new_cluster.id])  # Reload clusters to reflect the changes
+        self.clusters_view_widget.clear_cluster_cards(cluster_ids)
+        self.load_clusters([new_cluster.id])
 
     def assign_clusters_to_class(self, class_name):
         """Assigns the images in the selected clusters to a class."""
-        cluster_ids = list(self.selected_card_ids)
-        if not cluster_ids:
-            return  # Nothing selected
-        class_object = self.data_manager.get_class_by_name(class_name)
+        if not self.selected_card_ids:
+            return
 
+        class_object = self.data_manager.get_class_by_name(class_name)
         if not class_object:
-            print(f"Error: Class '{class_name}' not found.")
             CustomInfoBar.error(
                 title='Class Assignment Failed',
                 content=f"Class '{class_name}' not found",
@@ -247,35 +233,36 @@ class ClustersPresenter(QObject):
                 isClosable=True,
                 position=InfoBarPosition.BOTTOM_RIGHT,
                 duration=3000,
-                parent=self.clusters_view_widget  # Assuming you have a reference to the main window
+                parent=self.clusters_view_widget
             )
             return
 
         try:
-            image_ids = []
-            for cluster_id in cluster_ids:
-                cluster = self.data_manager.get_cluster(cluster_id)
-                if cluster:
-                    image_ids.extend([image.id for image in cluster.samples])
+            # Collect all image IDs
+            image_ids = [
+                image.id 
+                for cluster_id in self.selected_card_ids
+                for image in self.data_manager.get_cluster(cluster_id).samples
+            ]
+            
+            # Build old class mapping
             old_classes_to_images = {}
             for image_id in image_ids:
                 image = self.data_manager.get_image(image_id)
-                if image.class_id not in old_classes_to_images:
-                    old_classes_to_images[image.class_id] = []
-                old_classes_to_images[image.class_id].append(image_id)
+                old_classes_to_images.setdefault(image.class_id, []).append(image_id)
 
-            # remove images from old classes
-            for class_id, image_ids in old_classes_to_images.items():
-                self.data_manager.remove_images_from_class(image_ids, class_id)
-                self.class_updated.emit(class_id)  # Emit signal to update old class previews
+            # Bulk update operations
+            for class_id, imgs in old_classes_to_images.items():
+                self.data_manager.remove_images_from_class(imgs, class_id)
+                self.class_updated.emit(class_id)
 
-            # assign images to class
+            # Assign images to class
             self.data_manager.add_images_to_class(image_ids, class_object.id)
             self.class_updated.emit(class_object.id)
             self.clear_selection()
             CustomInfoBar.success(
                 title='Class Assignment Successful',
-                content=f"Successfully assigned {len(cluster_ids)} clusters to class '{class_name}'",
+                content=f"Successfully assigned {len(self.selected_card_ids)} clusters to class '{class_name}'",
                 orient=Qt.Horizontal,
                 isClosable=True,
                 position=5,
