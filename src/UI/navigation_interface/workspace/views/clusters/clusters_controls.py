@@ -81,7 +81,7 @@ class ControlPanel(QWidget):
             QGroupBox {
                 font-size: 13px;
                 font-weight: normal; /* Removed bold font weight */
-                border: 1px solid #d0d0d0;
+                border: 0.5px solid #e8e8e8;
                 border-radius: 8px;
                 margin-top: 10px;
             }
@@ -182,6 +182,7 @@ class ControlPanel(QWidget):
 
         # Feature Extractor Model Selector
         self.model_label = QLabel("Feature Extractor Model:", self.kmeans_params_group)
+        self.model_label.setFont(QFont("Arial", 11))  # Refined font size
         self.model_label.setStyleSheet("color: #555555;")
         self.kmeans_model_selector = ComboBox(self.kmeans_params_group)
         self.kmeans_model_selector.setFixedHeight(28)
@@ -221,7 +222,7 @@ class ControlPanel(QWidget):
         kmeans_layout.addWidget(self.iterationsSlider)
         kmeans_layout.addWidget(self.clustersLabel, alignment=Qt.AlignHCenter)
         kmeans_layout.addWidget(self.clustersSlider)
-        kmeans_layout.addWidget(self.model_label, alignment=Qt.AlignLeft)
+        kmeans_layout.addWidget(self.model_label, alignment=Qt.AlignHCenter)
         kmeans_layout.addWidget(self.kmeans_model_selector)
 
         # Buttons

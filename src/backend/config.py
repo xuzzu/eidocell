@@ -1,9 +1,10 @@
 # backend/config.py
 import json
 from pathlib import Path
+import os
 
 # Project Root (determined dynamically)
-PROJECT_ROOT = Path(__file__).parent.parent.parent  # Go up three levels from config.py
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC_ROOT = PROJECT_ROOT / "src"
 
 # UI Configs
